@@ -1,0 +1,22 @@
+{
+  "name": "skill-auto-installer",
+  "version": "1.0.0",
+  "description": "自然语言意图分析 → 技能推荐 → 自动安装。Claude Code 元技能，让 Claude 自动发现、安装并调用所需技能。",
+  "main": ".claude/hooks/onUserPromptSubmit.js",
+  "files": [
+    ".claude/"
+  ],
+  "keywords": [
+    "claude-code",
+    "skill",
+    "auto-install",
+    "intent-analysis",
+    "自然语言",
+    "技能自动安装"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QM152/skill-auto-installer.git"
+  }
+}
