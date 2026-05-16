@@ -12,21 +12,32 @@
 Claude 内部流程:
   1. [意图分析] 检测到 "PDF" 关键词 → 需要 pdf 技能
   2. [安装检查] pdf 技能未安装
-  3. [市场搜索] 在 anthropic-agent-skills 市场中找到 pdf/
+  3. [市场搜索] 在 marketplace 中找到 pdf/
   4. [自动安装] cp -r marketplace/pdf ~/.claude/skills/pdf
   5. [调用技能] 使用 pdf 技能生成报告
 ```
 
 ## 安装
 
-### 方式一：作为项目技能
+### 方式一：添加 Marketplace（推荐）
+
+```bash
+# 在 Claude Code 中运行
+/plugin marketplace add maimai-dot/skill-auto-installer
+
+# 然后安装技能
+/plugin install skill-auto-installer
+```
+
+### 方式二：Git Clone
 
 ```bash
 git clone https://github.com/maimai-dot/skill-auto-installer.git
-cp -r skill-auto-installer/.claude/skills/skill-auto-installer.md ~/.claude/skills/
+mkdir -p ~/.claude/skills/skill-auto-installer
+cp skill-auto-installer/skills/skill-auto-installer/SKILL.md ~/.claude/skills/skill-auto-installer/SKILL.md
 ```
 
-### 方式二：配合 Hook 使用（推荐）
+### 方式三：配合 Hook 使用（获得毫秒级预扫描）
 
 在 `.claude/settings.json` 中添加：
 
@@ -51,7 +62,7 @@ cp -r skill-auto-installer/.claude/skills/skill-auto-installer.md ~/.claude/skil
        ├──→ [Hook] onUserPromptSubmit.js
        │     关键字快速匹配，预安装明显匹配的技能
        │
-       └──→ [Skill] skill-auto-installer.md
+       └──→ [Skill] SKILL.md
              Claude 深度分析意图，精确匹配并安装，
              然后调用技能完成用户任务
 ```
@@ -80,10 +91,12 @@ cp -r skill-auto-installer/.claude/skills/skill-auto-installer.md ~/.claude/skil
 | "测试这个网页" | `webapp-testing` |
 | "创建一个自定义技能" | `skill-creator` |
 
+共支持 **17 种意图域**。
+
 ## 前置条件
 
 - 已安装 Claude Code
-- 至少注册了一个 marketplace（如 `anthropics/skills`）：
+- 至少注册了一个 skills marketplace（如 `anthropics/skills`）
 
 ```bash
 /plugin marketplace add anthropics/skills
