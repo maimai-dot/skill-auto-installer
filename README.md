@@ -22,7 +22,7 @@ Claude 内部流程:
 ### 方式一：作为项目技能
 
 ```bash
-git clone https://github.com/QM152/skill-auto-installer.git
+git clone https://github.com/maimai-dot/skill-auto-installer.git
 cp -r skill-auto-installer/.claude/skills/skill-auto-installer.md ~/.claude/skills/
 ```
 
