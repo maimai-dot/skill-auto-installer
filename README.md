@@ -102,6 +102,13 @@ cp skill-auto-installer/skills/skill-auto-installer/SKILL.md ~/.claude/skills/sk
 /plugin marketplace add anthropics/skills
 ```
 
+## 社区
+
+- 📝 [掘金：Claude Code 神技：说人话就能自动安装技能](https://juejin.cn/post/7640257851873345582)
+- 📝 [知乎：Claude Code 神技：说人话就能自动安装技能](https://zhuanlan.zhihu.com/p/2039087673802019787)
+- 🐙 [GitHub](https://github.com/maimai-dot/skill-auto-installer)
+- 🔧 [PR to anthropics/skills](https://github.com/anthropics/skills/pull/1146)
+
 ## License
 
 MIT
